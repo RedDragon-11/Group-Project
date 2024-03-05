@@ -1,7 +1,37 @@
+
+body {
+  background-color: rgb(149, 149, 149);
+}
 .content {
   font-size: 16px;
   margin: 50px;
   font-family: Arial;
+  text-align: center;
+  padding: 5px 5px;
+  margin: 5px 8px;
+  border-style: inset;
+  background-color: beige;
+}
+#submit {
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+form {
+  position: relative;
+  text-align: center;
+  border-style: inset;
+  background-color: beige;
+  padding: 5px 5px;
+  margin: 5px 8px;
 }
 
 .footer {
@@ -13,15 +43,18 @@
 /* Navbar container */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: beige;
+  color: black;
   font-family: Arial;
+  border-style: outset;
 }
 
 /* Links inside the navbar */
 .topnav a {
   float: right;
+  border: inset;
   font-size: 16px;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -36,9 +69,9 @@
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
-  border: none;
+  border: inset;
   outline: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
@@ -47,7 +80,7 @@
 
 /* Add a red background color to navbar links on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(210, 210, 147);
 }
 
 /* Dropdown content (hidden by default) */
@@ -56,7 +89,7 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px black;
   z-index: 1;
 }
 
@@ -78,4 +111,19 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+form .show {
+  width: 5%;
+  height: 25px;
+  border: none;
+  outline: none;
+  text-align: center;
+  background: #27ae60;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
 }

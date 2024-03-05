@@ -22,7 +22,8 @@
     <a href="index.html">Home</a>
   </div>
 
-  <div class="content"> 
+  <form action="#">
+  <div class="forms"> 
     <p>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
@@ -33,14 +34,80 @@
     </p>
     <p>
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input onkeyup="active()" type="password" placeholder="Enter Password" name="psw" id="psw" required>
     </p>
     <p>
       <label for="psw2"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="psw2" required>
+      <input onkeyup="active_2()" type="password" placeholder="Confirm Password" name="psw2" id="psw2" required>
     </p>
-    <button type="submit">Register Account</button>
+    <div class="errorText"></div>
+    <div class="show">
+      Show
+    </div>
+    <button type="submit" id="submit" disabled>Register Account</button>
   </div>
+</form>
 
+  <script>
+    const password1 = document.querySelector("#psw");
+    const password2 = document.querySelector("#psw2");
+    const btn = document.querySelector("#submit");
+    const errorText = document.querySelector(".error-text");
+    const showBtn = document.querySelector(".show");
+
+    function active(){
+      if(password1.value.length >= 6){
+        btn.removeAttribute("disabled", "");
+        btn.classList.add("active");
+        password2.removeAttribute("disabled", "");
+      }
+      else{
+        btn.setAttribute("disabled", "");
+        btn.classList.remove("active");
+        password2.setAttribute("disabled", "");
+      }
+    }
+
+    btn.onclick = function(){
+      if(password1.value != password2.value){
+        errorText.style.display = "block";
+        errorText.classList.remove("matched");
+        errorText.textContent = "Error! Password does not match!";
+        return false;
+      }
+      else{
+        errorText.style.display = "block";
+        errorText.classList.add("matched");
+        errorText.textContent = "Password Confirmed!"
+        return false;
+      }
+    }
+    function active_2(){
+      if(password2.value != ""){
+        showBtn.style.display = "block";
+        showBtn.onclick = function(){
+          if((password1.type == "password") && (password2.type == "password")){
+            password1.type = "text";
+            password2.type = "text";
+            this.textContent = "Hide";
+            this.classList.add("active");
+          }
+          else{
+            password1.type = "password";
+            password2.type = "password";
+            this.textContent = "Show";
+            this.classList.remove("active");
+          }
+        }
+      }
+      else{
+        showBtn.style.display = "block";
+      }
+    }
+  </script>
+<div class="footer">
+  <p>Team 1 Regestiry Project. ©2024 Team 1</p>
+</div>
 </body>
+
 </html>
