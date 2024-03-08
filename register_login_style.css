@@ -41,9 +41,14 @@
       color: #fff;
       text-decoration: none;
       font-weight: 700;
+      float: left;
+      position: absolute;
+      margin-left: -35px;
     }
     
-    
+    .png{
+      margin-left: -100px;
+    }
     
     .dropdown {
       float: right;
