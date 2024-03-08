@@ -1,8 +1,5 @@
 
-body {
-  background-color: rgb(149, 149, 149);
-}
-.content {
+/*.content {
   font-size: 16px;
   margin: 50px;
   font-family: Arial;
@@ -38,18 +35,55 @@ form {
   text-align: center;
   font-size: 12px;
   font-family: Arial;
+}*/
+
+/* Navbar/Header container */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
 }
 
-/* Navbar container */
-.topnav {
-  overflow: hidden;
-  background-color: beige;
-  color: black;
-  font-family: Arial;
-  border-style: outset;
+body{
+  min-height: 100vh;
+  background: url('homepage-background-img.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-/* Links inside the navbar */
+.topnav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  background: rgba(157, 114, 114, 0.1);
+  backdrop-filter: blur(50px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar a{
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 2.5rem;
+}
+
+.logo{
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+
+/* Links inside the navbar 
 .topnav a {
   float: right;
   border: inset;
@@ -58,15 +92,15 @@ form {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
+}*/
 
-/* The dropdown container */
+/* The dropdown container 
 .dropdown {
   float: right;
   overflow: hidden;
-}
+}*/
 
-/* Dropdown button */
+/* Dropdown button 
 .dropdown .dropbtn {
   font-size: 16px;
   border: inset;
@@ -74,16 +108,16 @@ form {
   color: rgb(0, 0, 0);
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
+  font-family: inherit;  Important for vertical align on mobile phones 
+  margin: 0;  Important for vertical align on mobile phones 
+}*/
 
-/* Add a red background color to navbar links on hover */
+/* Add a red background color to navbar links on hover 
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: rgb(210, 210, 147);
-}
+}*/
 
-/* Dropdown content (hidden by default) */
+/* Dropdown content (hidden by default) 
 .dropdown-content {
   display: none;
   position: absolute;
@@ -91,9 +125,9 @@ form {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px black;
   z-index: 1;
-}
+}*/
 
-/* Links inside the dropdown */
+/* Links inside the dropdown 
 .dropdown-content a {
   float: none;
   color: black;
@@ -103,12 +137,12 @@ form {
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
+/* Add a grey background color to dropdown links on hover 
 .dropdown-content a:hover {
   background-color: #ddd;
-}
+}*/
 
-/* Show the dropdown menu on hover */
+/* Show the dropdown menu on hover 
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -127,3 +161,4 @@ form .show {
   letter-spacing: 1px;
   cursor: pointer;
 }
+*/
