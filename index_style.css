@@ -64,6 +64,11 @@ body{
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  min-width: 1000px;
+}
+
+.topnav .icon {
+  display: none;
 }
 
 .navbar a{
@@ -73,6 +78,12 @@ body{
   font-weight: 400;
   margin-left: 2.5rem;
 }
+
+.navbar a:hover{
+    background-color: #b29d8d;
+    color: black;
+}
+
 
 .logo{
   font-size: 2rem;
