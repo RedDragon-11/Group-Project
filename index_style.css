@@ -37,6 +37,7 @@ form {
   font-family: Arial;
 }*/
 
+
 /* Navbar/Header container */
 *{
 margin: 0;
@@ -127,7 +128,7 @@ body{
 
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #b29d8d;
 }
 
 .dropdown:hover .dropdown-content {
@@ -149,8 +150,8 @@ body{
 
 .content .text-box{
 font-size: 20px;
+color: #6b7555
 }
-
 
 .index-header .header-content{
   padding-top: 200px;
