@@ -54,7 +54,7 @@ body{
 
 .topnav{
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   padding: 1.3rem 10%;
@@ -126,6 +126,23 @@ body{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+.content .box {
+  margin-top: 500px;
+  padding: 3rem 2rem;
+  text-align: left;
+  background: white;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-top: 30px;
+}
+
+.content .text-box{
+font-size: 20px;
 }
 
 /*form .show {
