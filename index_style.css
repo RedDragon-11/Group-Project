@@ -136,7 +136,7 @@ body{
 
 
 .content .box {
-  margin-top: 500px;
+  margin-top: 200px;
   padding: 3rem 2rem;
   text-align: left;
   background: white;
@@ -149,6 +149,22 @@ body{
 
 .content .text-box{
 font-size: 20px;
+}
+
+
+.index-header .header-content{
+  padding-top: 200px;
+  text-align: center;   
+}
+
+.header-content .web-title{
+font-size: 100px;
+color:#ffffff
+}
+
+.header-content{
+  font-size: 20px;
+  color: #ffffff;
 }
 
 /*form .show {
