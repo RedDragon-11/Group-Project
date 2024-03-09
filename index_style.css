@@ -74,6 +74,7 @@ body{
   color: #fff;
   text-decoration: none;
   font-weight: 400;
+  word-spacing: 100;
   
 }
 
@@ -84,10 +85,11 @@ body{
   font-weight: 700;
   float: left;
   position: absolute;
-  margin-left: -35px;
+  margin-left: -25px;
+  text-shadow: 2px 2px 4px rgba(100,100,100, 0.9);
 }
 
-.png{
+.logoimage{
   margin-left: -100px;
 }
 
@@ -149,8 +151,8 @@ body{
 }
 
 .content .text-box{
-font-size: 20px;
-color: #6b7555
+  font-size: 20px;
+  color: #6b7555
 }
 
 .index-header .header-content{
@@ -159,13 +161,15 @@ color: #6b7555
 }
 
 .header-content .web-title{
-font-size: 100px;
-color:#ffffff
+  font-size: 100px;
+  color:#ffffff;
+  text-shadow: 2px 2px 5px rgba(100,100,100, 1);
 }
 
 .header-content{
   font-size: 20px;
   color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(100,100,100, 1);
 }
 
 /*form .show {
@@ -183,3 +187,7 @@ color:#ffffff
   cursor: pointer;
 }*/
 
+.navbar .dropbtn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
