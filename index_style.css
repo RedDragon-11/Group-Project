@@ -83,7 +83,8 @@ body {
   font-weight: 700;
   float: left;
   position: absolute;
-  margin-left: -35px;
+  margin-left: -25px;
+  text-shadow: 2px 2px 4px rgba(100,100,100, 0.9);
 }
 
 .png {
@@ -164,6 +165,7 @@ body {
 .header-content {
   font-size: 20px;
   color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(100,100,100, 1);
 }
 
 
