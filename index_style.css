@@ -2,6 +2,7 @@ html{
   scroll-behavior: smooth;
 }
 
+
 /* Navbar/Header section */
 * {
   margin: 0;
@@ -94,6 +95,8 @@ html{
   display: block;
 }
 
+
+
 /*index section*/
 .index-header {
   min-height: 100vh;
@@ -160,7 +163,7 @@ html{
 }
 
 .content .text-box {
-  font-size: 40px;
+  font-size: 30px;
   color: #6b7555;
   padding: 3rem 2rem;
   flex: 1;
@@ -177,7 +180,7 @@ html{
   max-width: 800px;
   max-height: 700px;
   float: right;
-  border: 10px solid #b29d8d;
+  border: 10px solid #6b7555;
 }
 
 .content #viewBox {
@@ -186,7 +189,7 @@ html{
 }
 
 .button {
-  background-color: #b29d8d;
+  background-color: #6b7555;
   border: none;
   color: white;
   padding: 20px 80px;
@@ -198,7 +201,7 @@ html{
   transition: 1.5s;
 }
 .button:hover{
-  background-color: #a7907f;
+  background-color: #4e563e;
   outline: none;
   cursor: pointer;
   box-shadow: 8px 4px #bbb9b3;
@@ -237,6 +240,7 @@ html{
     width: 100%;
     transition: 0.7s all ease-in-out;
     height: 100%;
+    position: relative;
     object-fit: cover;
     object-position: center;
   }
@@ -269,7 +273,7 @@ html{
   .footer {
     color: #d1c9bb;
     padding-top: 50px;
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
   }
 
@@ -293,11 +297,6 @@ html{
     .text {
       font-size: 40px;
     }
-
-    .header,
-    .footer {
-      font-size: 30px;
-    }
   }
 }
 
@@ -311,27 +310,27 @@ html{
 
   .item-category .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     background-color: #eceae1;
     padding: 10px;
-    column-gap: 50px;
-    row-gap: 50px;
+    column-gap: 20px;
+    row-gap: 20px;
     border: 5px solid blue;
     margin: 0;
   }
 
   .item-category img{
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: auto;
   }
 
   .item-category .grid-item{
     background-color: #eceae1;
     border: 5px solid red;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   }
-  .item-category.grid-item .text{
+  .item-category .grid-item .text{
     font-size: 10px;
   }
 
