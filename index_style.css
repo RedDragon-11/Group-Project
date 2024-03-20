@@ -100,8 +100,7 @@ html{
 /*index section*/
 .index-header {
   min-height: 100vh;
-  background: url('homepage-background-img.jpg') no-repeat;
-
+  background: url('Images/homepage-background-img.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 
