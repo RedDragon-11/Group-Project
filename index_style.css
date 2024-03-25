@@ -72,14 +72,14 @@ html{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #b29d8d;
   min-width: 160px;
   z-index: 1;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: #fff;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -88,7 +88,7 @@ html{
 
 
 .dropdown-content a:hover {
-  background-color: #b29d8d;
+  background-color: #978578;
 }
 
 .dropdown:hover .dropdown-content {
@@ -154,8 +154,8 @@ html{
 }
 
 .head-title{
-  color: #b29d8d;
-  font-size: 50px;
+  font-size: 60px;
+  color: #6b7555;
   text-align: center;
 }
   
@@ -169,7 +169,7 @@ html{
   max-height: 700px;
   float: right;
   border: 10px solid #6b7555;
-  border-radius: 12px;
+  border-radius: 50%;
 }
 
 .content #viewBox {
@@ -185,8 +185,7 @@ button {
   width: fit-content;
   display: flex;
   font-size: 30px;
-  margin-top: 20px;
-  margin-left: 100px;
+margin: auto;
   border-radius: 8px;
   transition: 1.5s;
 }
@@ -210,9 +209,17 @@ button {
     margin: 50px;
   }
 
+  .button{
+    margin: auto;
+  }
+
   .text-box {
     text-align: center;
     font-size: 40px;
+  }
+
+  .head-title{
+    margin: auto;
   }
 }
 }
@@ -301,6 +308,10 @@ button {
     .text {
       font-size: 40px;
     }
+
+    .header{
+      margin: auto;
+    }
   }
 }
 
@@ -315,7 +326,7 @@ button {
 }
 
 .item-category .header-content{
-  font-size: 5vw;
+  font-size: 60px;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -386,6 +397,16 @@ border-radius: 12px;
     .item-category .grid-container {
       grid-template-columns: repeat(2, minmax(0, 1fr)); /* Change to 2 columns */
     }
+
+    .header-content{
+      margin: auto;
+    }
+  }
+
+
+
+  .footer-content{
+    background-color: #6b7555;
   }
 
   /*.item-category .grid-item:hover .text {
