@@ -103,40 +103,16 @@ html{
   background: url('Images/homepage-background-img.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-
 }
-
-/*.index-header::before,
-.index-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 25px;
-  height: 50px;
-  background: radial-gradient(closest-side, #eceae1, #eceae1 50%, transparent 50%);
-
-  background-size: 50px 50px;
-  background-position: 0 25px;
-  background-repeat: repeat-x;
-}
-
-.index-header::after {
-  background: radial-gradient(closest-side, transparent, transparent 50%, #eceae1 50%);
-  background-size: 50px 50px;
-  background-position: 25px -25px;
-  background-repeat: repeat-x;
-  bottom: -25px;
-}*/
-
 
 .index-header .web-title {
-  font-size: 150px;
-  color: #ffffff
+  font-size: 9vw;
+  color: #ffffff;
+  padding-top: 40px;
 }
 
 .index-header .header-content {
-  font-size: 50px;
+  font-size: 2vw;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(100, 100, 100, 1);
   text-align: center;
@@ -148,6 +124,14 @@ html{
   max-width: 90%;
 }
 
+.index-content svg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+
 
 
 /*information section*/
@@ -156,18 +140,23 @@ html{
   margin-top: 0;
   text-align: left;
   background: #eceae1;
-  width: fit-content;
+  width: auto;
   height: auto;
   position: relative;
 }
 
 .content .text-box {
   font-size: 30px;
-  color: #6b7555;
+  color: #b29d8d;
   padding: 3rem 2rem;
   flex: 1;
   padding-left: 20px;
-  padding-top: 150px;
+}
+
+.head-title{
+  color: #b29d8d;
+  font-size: 50px;
+  text-align: center;
 }
   
 .image-text-container{
@@ -180,6 +169,7 @@ html{
   max-height: 700px;
   float: right;
   border: 10px solid #6b7555;
+  border-radius: 12px;
 }
 
 .content #viewBox {
@@ -187,15 +177,16 @@ html{
   width: 100%;
 }
 
-.button {
+button {
   background-color: #6b7555;
   border: none;
-  color: white;
+  color: #eceae1;
   padding: 20px 80px;
-  text-align: center;
+  width: fit-content;
   display: flex;
   font-size: 30px;
-  margin: 30px 400px;
+  margin-top: 20px;
+  margin-left: 100px;
   border-radius: 8px;
   transition: 1.5s;
 }
@@ -208,7 +199,22 @@ html{
  
 }
 
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  img {
+    max-width: 80%;
+    margin: 50px;
+  }
+
+  .text-box {
+    text-align: center;
+    font-size: 40px;
+  }
+}
 }
 
 
@@ -268,8 +274,7 @@ html{
     color:#545c43;
     transition: 0.7s;
   }
-  .header,
-  .footer {
+  .header {
     color: #d1c9bb;
     padding-top: 50px;
     font-size: 60px;
@@ -305,33 +310,98 @@ html{
 .item-category{
   display: flex;
   flex-wrap: wrap;
+  background-color: #eceae1;
+
+}
+
+.item-category .header-content{
+  font-size: 5vw;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
   .item-category .grid-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    background-color: #eceae1;
     padding: 10px;
     column-gap: 20px;
     row-gap: 20px;
-    border: 5px solid blue;
+/* border: 5px solid red;*/
     margin: 0;
   }
 
   .item-category img{
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
+/* border: 5px solid red;*/    
+object-fit: scale-down;
+border-radius: 12px;
   }
 
   .item-category .grid-item{
-    background-color: #eceae1;
-    border: 5px solid red;
+    position: relative;
+    background-color: #fff;
+   /* border: 5px solid red;*/
     padding: 10px;
     text-align: center;
+    border-radius: 12px;
   }
   .item-category .grid-item .text{
-    font-size: 10px;
+    font-size: 15px;
+    /*border: 5px solid green;*/
+    text-align: center;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    transition: text-overflow 0.3s;
+    color:#6b7555;
   }
+.item-category .header-content{
+  color:#b29d8d;
+}
+  .grid-container p{
+    color:#6b7555;
+  }
+
+  .item-category button{
+    border: none;
+    background-color: #545c43;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: none;
+    color: #eceae1;
+    transition: 1.5s;
+  }
+
+  .item-category button:hover{
+    background-color: #4e563e;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 8px 4px #bbb9b3;
+    transition: 1s;
+  }
+
+  @media (max-width: 900px) {
+    .item-category .grid-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* Change to 2 columns */
+    }
+  }
+
+  /*.item-category .grid-item:hover .text {
+    text-overflow: visible; 
+    white-space: normal; 
+  }*/
+
+  /*.grid-item p{
+ border: 5px solid red;
+  }*/
+
+
+
+
+
+  
 
 
 
