@@ -95,6 +95,11 @@ html{
   display: block;
 }
 
+@media (max-width: 768px) {
+
+  
+}
+
 
 
 /*index section*/
@@ -185,7 +190,7 @@ button {
   width: fit-content;
   display: flex;
   font-size: 30px;
-margin: auto;
+  margin: auto;
   border-radius: 8px;
   transition: 1.5s;
 }
@@ -320,7 +325,7 @@ margin: auto;
 /*item category section*/
 .item-category{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   background-color: #eceae1;
 
 }
@@ -392,6 +397,11 @@ border-radius: 12px;
     box-shadow: 8px 4px #bbb9b3;
     transition: 1s;
   }
+  #viewBox{
+      display: flex;
+      width: 100%;
+      position: relative ;
+    }
 
   @media (max-width: 900px) {
     .item-category .grid-container {
@@ -401,41 +411,23 @@ border-radius: 12px;
     .header-content{
       margin: auto;
     }
+
+    
   }
 
 
 
   .footer-content{
     background-color: #6b7555;
+
+
+    h2{
+      margin: auto;
+    }
+    .content{
+      margin: auto;
+font-size: large;
+    }
+
   }
 
-  /*.item-category .grid-item:hover .text {
-    text-overflow: visible; 
-    white-space: normal; 
-  }*/
-
-  /*.grid-item p{
- border: 5px solid red;
-  }*/
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-/*.pattern-section {
-  min-height: 20vh;
-  background: url(patter-test-2.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}*/
