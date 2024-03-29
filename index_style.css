@@ -399,7 +399,7 @@ border-radius: 12px;
   }
   #viewBox{
       display: flex;
-      width: 100%;
+      max-width: 100%;
       position: relative ;
     }
 
