@@ -419,15 +419,43 @@ border-radius: 12px;
 
   .footer-content{
     background-color: #6b7555;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #eceae1;
+  
 
-
-    h2{
-      margin: auto;
+    .list{ 
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0;
     }
-    .content{
-      margin: auto;
-font-size: large;
+
+    .list a{
+font-size:30px;
     }
 
+    .list-unstyled{
+      margin-top: 10px;
+      list-style-type: none;
+    }
+
+
+    .list-content {
+      margin:20px;
+     font-size: 15px;
+     
+    }
+
+    @media (max-width: 768px) {
+      
+      ul{
+        flex-wrap: wrap;
+       }
+
+      li{
+        flex-basis: 50%;
+       
+      }
+    }
   }
-
