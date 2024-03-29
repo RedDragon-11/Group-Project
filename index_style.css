@@ -398,6 +398,7 @@ border-radius: 12px;
     transition: 1s;
   }
   #viewBox{
+     height: auto;
       display: flex;
       max-width: 100%;
       position: relative ;
@@ -414,8 +415,6 @@ border-radius: 12px;
 
     
   }
-
-
 
   .footer-content{
     background-color: #6b7555;
