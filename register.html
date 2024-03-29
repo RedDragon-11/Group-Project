@@ -24,7 +24,7 @@
       </nav>
     </header>
 
-  <form action="connect.php" method="POST">
+  <form action="connect.php" method="post">
   <div class="container">
     <b class="header">Account Creation Information</b>
   <div class="forms"> 
@@ -35,24 +35,24 @@
     </div>
     <div>
       <p>First Name</p>
-      <label for="fname"></label>
-      <input type="text" placeholder="Enter First Name" name="fname" required>
+      <label for="firstName"></label>
+      <input type="text" placeholder="Enter First Name" name="firstName" required>
     </div>
     <div>
       <p>Last Name</p>
-      <label for="lname"></label>
-      <input type="text" placeholder="Enter Last Name" name="lname" required>
+      <label for="lastName"></label>
+      <input type="text" placeholder="Enter Last Name" name="lastName" required>
     </div>
     <div>
       <p>Password</p>
-      <label for="psw"></label>
-      <input onkeyup="active()" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <label for="password"></label>
+      <input onkeyup="active()" type="password" placeholder="Enter Password" name="password" id="password" required>
     </div>
-    <div>
+    <!-- <div>
       <p>Confirm Password</p>
       <label for="psw2"></label>
       <input onkeyup="active_2()" type="password" placeholder="Confirm Password" name="psw2" id="psw2" required>
-    </div>
+    </div> -->
   
     <div class="errorText"></div>
     <button type="submit" id="submit">Register Account</button>
