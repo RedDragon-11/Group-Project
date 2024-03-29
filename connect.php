@@ -1,27 +1,35 @@
 <?php
-    header("Allow: GET, POST, HEAD");
+
+$email = filter_input(INPUT_POST, 'email');
+$firstName = filter_input(INPUT_POST, 'firstName');
+$lastName = filter_input(INPUT_POST, 'lastName');
+$password = filter_input(INPUT_POST, 'password');
 
 
-    $email = $_POST['email']; // Add semicolon
-    $fname = $_POST['fname']; // Add semicolon
-    $lname = $_POST['lname']; // Add semicolon
-    $psw = $_POST['psw']; // Add semicolon
-    
-    //Database connection
-    $conn = new mysqli('localhost','root','','test'); // Add semicolon
-    if($conn->connect_error){
-        die('Connection Failed : '.$conn->connection_error);
-    }else{
-        $stmt = $conn->prepare("insert into registration(fname, lname, email, psw)
-        values(?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $fname, $lname, $email, $psw);
-        $stmt->execute();
-        echo "registration successful...";
-        $stmt->close();
-        $conn->close();
+
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "salidata";
+
+//create connection
+
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+if (mysqli_connect_error()){
+    die('Connect Error ('. mysqli_connect_errorno() .') '
+    . mysqli_connect_error());
+}
+else{
+    $sql = "INSERT INTO storedinfo(email, firstName, lastName, password)
+    values ('$email', '$firstName', '$lastName', '$password')";
+    if ($conn->query($sql)){
+        echo "New record is inserted successfully";
     }
-    
-
-
+    else{
+        echo "Error: ". $sql ."<br>". $conn->error;
+    }
+    $conn->close();
+}
 
 ?>
