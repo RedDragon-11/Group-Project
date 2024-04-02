@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <header class="topnav">
+  <header class="topnav" Allow>
     <img class="png" src="images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
 
   <p class="logo">Wishful Registeries</p>
@@ -24,17 +24,29 @@
       </nav>
     </header>
 
+  <form action="login.php" method="post">
+  <div class="container">
+    <b class="header">Login Information</b>
   <div class="forms"> 
-    <p>
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
-    </p>
-    <p>
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    </p>
-    <button type="submit">Login</button>
+    <div>
+      <p>User Email</p>
+      <label for="email"></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+    </div>
+    <div>
+      <p>Password</p>
+      <label for="password"></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+    </div>
+  
+    <button type="submit" id="submit">Login</button>
   </div>
+</div>
+</form>
 
+<div class="footer">
+  <p>Team 1 Regestiry Project. ©2024 Team 1</p>
+</div>
 </body>
+
 </html>
