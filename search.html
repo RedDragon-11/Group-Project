@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Team Registry: Home</title>
-  <link href="search_style.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>Team Registry: Search Wishlists</title>
+    <link href="search_style.css" rel="stylesheet" />
 </head>
 <body>
 
-    <header class="topnav">
-      <img class="png" src="Images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
+  <header class="topnav" Allow>
+    <img class="png" src="images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
 
-      <p class="logo">Wishful Registeries</p>
-          <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="search.html">Search Wishlists</a>
-            <div class="dropdown">
-              <button class="dropbtn">Login/Register</button>
-              <div class="dropdown-content">
-                <a href="register.html">Register</a>
-                <a href="login.html">Login</a>
-      </div>
-      </div>
-          </nav>
-        </header>
+  <p class="logo">Wishful Registeries</p>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="search.html">Wishlist Search</a>
+        <div class="dropdown">
+          <button class="dropbtn">Login/Register</button>
+          <div class="dropdown-content">
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+  <div class="container">
+    <b class="header">Search for Wishlists</b>
+    <div class="forms"> 
+      <form action="search_results.php" method="get">
+        <div>
+          <label for="search">Search:</label>
+          <input type="text" id="search" name="search" placeholder="Enter keywords..." required>
+        </div>
+        <button type="submit" id="searchButton">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Team 1 Regestiry Project. ©2024 Team 1</p>
+  </div>
+
+</body>
+</html>
