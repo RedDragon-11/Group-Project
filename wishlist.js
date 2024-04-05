@@ -7,25 +7,16 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-// Connect to MongoDB database
-mongoose.connect('mongodb://localhost:27017/wishlist', { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-    console.log('Connected to MongoDB database');
-});
+// // Connect to MongoDB database
+// mongoose.connect('mongodb://localhost:27017/wishlist', { useNewUrlParser: true, useUnifiedTopology: true });
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// db.once('open', () => {
+//     console.log('Connected to MongoDB database');
+// });
 
 // Define Mongoose schema
-const wishlistSchema = new mongoose.Schema({
-    name: String,
-    items: [{
-        name: String,
-        url: String,
-        color: String,
-        price: Number
-    }]
-});
-const Wishlist = mongoose.model('Wishlist', wishlistSchema);
+
 
 // Middleware to parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,7 +54,7 @@ app.post('/addwishlist', (req, res) => {
 // Route to query wishlist by name
 app.get('/wishlist/:name', (req, res) => {
     const wishlistName = req.params.name;
-    
+
     Wishlist.findOne({ name: wishlistName }, (err, wishlist) => {
         if (err) {
             console.error('Error querying wishlist:', err);
@@ -74,9 +65,4 @@ app.get('/wishlist/:name', (req, res) => {
             res.json(wishlist);
         }
     });
-});
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
 });

@@ -21,6 +21,19 @@ const Loginschema = new mongoose.Schema({
     }
 });
 
+
+//added
+// const wishlistSchema = new mongoose.Schema({
+//     name: String,
+//     items: [{
+//         name: String,
+//         url: String,
+//         color: String,
+//         price: Number
+//     }]
+// });
+// const Wishlist = mongoose.model('Wishlist', wishlistSchema);
+
 // collection part
 const collection = new mongoose.model("users", Loginschema);
 
