@@ -15,14 +15,14 @@
   
   .topnav {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 1.3rem 10%;
+    padding: 30px 15px;
     background: rgba(157, 114, 114, 0.1);
     backdrop-filter: blur(50px);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     z-index: 100;
     min-width: 800px;
@@ -30,70 +30,105 @@
   
   .navbar a {
     padding-right: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 30px;
     color: #fff;
     text-decoration: none;
     font-weight: 400;
+    margin-left: 2.5rem;
+  
+  }
+  
+  .navbar a:hover{
+    text-decoration-line:underline;
+    text-decoration-thickness: 0.7px;
+    text-underline-offset: 12px;
   
   }
   
   .logo {
-    font-size: 2rem;
+    font-size: 40px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
     float: left;
     position: absolute;
-    margin-left: -25px;
-    text-shadow: 2px 2px 4px rgba(100, 100, 100, 0.9);
-  }
-  
-  .png {
-    margin-left: -100px;
+    padding-left: 70px;
+   
   }
   
   
-  .dropdown {
-    float: right;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-decoration: none;
-    color: #fff;
-    background-color: transparent;
-    font-family: inherit;
-    border: 0;
-    outline: 0;
+  #check{
+    display:none ;
   }
   
   
-  .dropdown-content {
-    display: none;
+  .icons{
     position: absolute;
-    background-color: #b29d8d;
-    min-width: 160px;
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
+    right: 5%;
+    font-size: 2.8rem;
     color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #978578;
+    cursor: pointer;
+    display: none;
   }
   
-  .dropdown:hover .dropdown-content {
-    display: block;
+  
+  @media (max-width:1500px) {
+  .topnav{
+    padding: 30px 15px;
   }
+  
+  .icons{
+    display: inline-flex;
+  }
+  
+  #check:checked~.icons #menu-icon{
+    display:none;
+  }
+  
+  .icons #close-icon{
+    display: none;
+  }
+  
+  #check:checked~.icons #close-icon{
+    display:block;
+  }
+  
+  .navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: red;
+    overflow: hidden;
+    transition: .3s ease;
+  }
+  
+  
+  #check:checked~.navbar{
+    height: 17.7rem;
+  }
+  
+  .navbar a{
+    display: block;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: .3s ease;
+  }
+  
+  
+  #check:checked~.navbar a{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(.15s * var(--i));
+  }
+  }
+  
+  
+  
   /*account creation section*/
   .container{
     padding-top: 20px;
@@ -143,7 +178,6 @@
    
   }
 
-
   #viewBox{
     height: auto;
      display: flex;
@@ -151,7 +185,7 @@
      position: relative ;
    }
 
-   .footer-content{
+  .footer-content{
     background-color: #6b7555;
     display: flex;
     flex-wrap: wrap;

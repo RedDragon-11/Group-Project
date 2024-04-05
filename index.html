@@ -6,6 +6,7 @@
   <title>Team Registry: Home</title>
   <link rel="icon" type="Images/registry-website-logo" href="Images/registry-website-logo.png" />
   <link href="index_style.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -13,17 +14,17 @@
   <!--navigation bar-->
   <header class="topnav">
     <img class="png" src="Images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
-
     <p class="logo">Wishful Registeries</p>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <i class="bx bx-x" id="close-icon"></i>
+    </label>
     <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="search.html">Wishlist Search</a>
-      <div class="dropdown">
-        <button class="dropbtn">Login/Register</button>
-        <div class="dropdown-content">
-          <a href="register.html">Register</a>
-          <a href="login.html">Login</a>
-        </div>
+      <a href="index.html" style="--i:0;">Home</a>
+      <a href="search.html" style="--i:1;">Wishlist Search</a>
+      <a href="login.html" style="--i:2;">Login</a>
+      <a href="register.html" style="--i:3;">Register</a>
       </div>
     </nav>
   </header>
@@ -222,11 +223,5 @@
   </ul>
 </div>
 </section>
-
-
-
-  
-
 </body>
-
 </html>
