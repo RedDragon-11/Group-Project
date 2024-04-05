@@ -46,9 +46,13 @@ app.post("/register", async (req, res) => {
 
         const userdata = await collection.insertMany(data);
         console.log(userdata);
+
+        // Redirect the user to index.html after successful registration
+        res.redirect("/"); // Assuming index.html is served at the root path
     }
 
 });
+
 
 // Login user 
 app.post("/login", async (req, res) => {
@@ -63,7 +67,7 @@ app.post("/login", async (req, res) => {
             res.send("wrong Password");
         }
         else {
-            res.render("home");
+            res.render("login");
         }
     }
     catch {
