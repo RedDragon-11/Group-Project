@@ -26,19 +26,74 @@
 <div class="container">
     <b class="header">Create Wishlist</b>
     <div class="forms">
+<<<<<<< Updated upstream
         <form action="wishlist.js" method="post">
+=======
+        <form action="/addwishlist" method="POST">
+>>>>>>> Stashed changes
             <div>
-                <label for="wishlist-name">Wishlist Name:</label>
-                <input type="text" id="wishlist-name" name="wishlist-name" placeholder="Enter wishlist name..." required>
+            <h2>Add Wishlist</h2>
+            <label for="wishlistName">Wishlist Name:</label>
+            <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter wishlist name..." required>
             </div>
-            <div>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" placeholder="Enter wishlist description..." required></textarea>
+            
+            <h3>Items</h3>
+            <div id="items-container">
+                <div class="item">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" name="itemName[]" required>
+                    
+                    <label for="itemURL">URL:</label>
+                    <input type="text" name="itemURL[]" required>
+                    
+                    <label for="itemColor">Color:</label>
+                    <input type="text" name="itemColor[]" required>
+                    
+                    <label for="itemPrice">Price:</label>
+                    <input type="text" name="itemPrice[]" required>
+                </div>
             </div>
-            <button type="submit" id="createButton">Create Wishlist</button>
+
+            <button type="button" onclick="addNewItem()">Add Item</button>
+            <br><br>
+            <button type="submit">Save Wishlist</button>
         </form>
     </div>
 </div>
+
+<script>
+    function addNewItem() {
+        const container = document.getElementById('items-container');
+        const newItem = document.createElement('div');
+        newItem.classList.add('item');
+        newItem.innerHTML = `
+            <label for="itemName">Item Name:</label>
+            <input type="text" name="itemName[]" required>
+            
+            <label for="itemURL">URL:</label>
+            <input type="text" name="itemURL[]" required>
+            
+            <label for="itemColor">Color:</label>
+            <input type="text" name="itemColor[]" required>
+            
+            <label for="itemPrice">Price:</label>
+            <input type="text" name="itemPrice[]" required>
+        `;
+        container.appendChild(newItem);
+    }
+</script>
+<style>
+    /* Style for horizontal alignment */
+    .item label,
+    .item input {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .item label {
+        width: 100px; /* Adjust width as needed */
+        text-align: right;
+    }
+</style>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
     <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
