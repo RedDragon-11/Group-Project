@@ -11,14 +11,14 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     const data = {
-        name: req.body.username,
+        email: req.body.email,
         password: req.body.password
     };
 
     const existingUser = await collection.findOne({ name: data.name });
 
     if (existingUser) {
-        res.send('User already exists. Please choose a different username.');
+        res.send('User already exists. Please choose a different email.');
     } else {
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(data.password, saltRounds);

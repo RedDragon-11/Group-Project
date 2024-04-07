@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const user = await collection.findOne({ name: req.body.username });
+        const user = await collection.findOne({ email: req.body.email });
         if (!user) {
             return res.send('User not found');
         }
