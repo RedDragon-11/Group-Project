@@ -1,3 +1,5 @@
+//config.js
+
 const mongoose = require('mongoose');
 const connect = mongoose.connect("mongodb+srv://natemvm:mongodb9009@mycluster.nmdwt65.mongodb.net/group1database");
 
