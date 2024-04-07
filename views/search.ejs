@@ -11,15 +11,16 @@
     <img class="png" src="images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
     <p class="logo">Wishful Registries</p>
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="search.html">Wishlist Search</a>
-        <div class="dropdown">
-            <button class="dropbtn">Login/Register</button>
-            <div class="dropdown-content">
-                <a href="register.html">Register</a>
-                <a href="login.html">Login</a>
-            </div>
-        </div>
+        <a href="/" style="--i:0;">Home</a>
+        <a href="/search" style="--i:1;">Wishlist Search</a>
+        <% if (loggedInUser) { %>
+          <a href="#" style="--i:2;">Logged in as: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
+        <% } else { %>
+          <a href="/login" style="--i:2;">Login</a>
+        <% } %>
+        <% if (!loggedInUser) { %>
+          <a href="/register" style="--i:3;">Register</a>
+        <% } %>
     </nav>
 </header>
 
@@ -32,7 +33,7 @@
                 <input type="text" id="search" name="search" placeholder="Enter keywords..." required>
             </div>
             <button type="submit" id="searchButton">Search</button>
-            <a href="wishlistcreate.html" class="create-button">Create Wishlist</a> <!-- Updated the href attribute -->
+            <a href="/wishlist" class="create-button">Create Wishlist</a> <!-- Updated the href attribute -->
         </form>
     </div>
 </div>

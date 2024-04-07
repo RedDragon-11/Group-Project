@@ -1,31 +1,16 @@
 // server.js
 
+
+
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-
-const app = express();
-const port = 3000;
-
-// // Connect to MongoDB database
-// mongoose.connect('mongodb://localhost:27017/wishlist', { useNewUrlParser: true, useUnifiedTopology: true });
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-// db.once('open', () => {
-//     console.log('Connected to MongoDB database');
-// });
-
-// Define Mongoose schema
+const router = express.Router();
+const collection = require('../config');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const app = require('../app'); // Import the app instance
 
 
-// Middleware to parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files (e.g., HTML, CSS, JS)
-app.use(express.static('public'));
-
-// Route to handle form submission
-app.post('/addwishlist', (req, res) => {
+router.post('/addwishlist', (req, res) => {
     const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
 
     // Create new wishlist document
@@ -52,7 +37,7 @@ app.post('/addwishlist', (req, res) => {
 });
 
 // Route to query wishlist by name
-app.get('/wishlist/:name', (req, res) => {
+router.get('/wishlist/:name', (req, res) => {
     const wishlistName = req.params.name;
 
     Wishlist.findOne({ name: wishlistName }, (err, wishlist) => {
@@ -66,3 +51,8 @@ app.get('/wishlist/:name', (req, res) => {
         }
     });
 });
+
+
+
+// Export the router
+module.exports = router;

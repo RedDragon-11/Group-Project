@@ -23,11 +23,15 @@ const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const searchRouter = require('./routes/search');
+const wishlistRouter = require('./routes/wishlist');
+
 
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/search', searchRouter);
+app.use('/wishlist', wishlistRouter);
+
 
 // Start server
 const port = 3000;

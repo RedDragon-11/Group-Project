@@ -3,7 +3,7 @@ const router = express.Router();
 
 // This route handles the GET request for displaying the search page
 router.get('/', (req, res) => {
-    res.render('search'); // Assuming you have a search.ejs file in your views directory
+    res.render('search', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
 });
 
 // This route handles the POST request for processing the search query
