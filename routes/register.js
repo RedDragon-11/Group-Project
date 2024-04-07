@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
         password: req.body.password
     };
 
-    const existingUser = await collection.findOne({ name: data.name });
+    const existingUser = await collection.findOne({ email: data.name });
 
     if (existingUser) {
         res.send('User already exists. Please choose a different email.');
