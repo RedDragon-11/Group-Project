@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 
 // Use express-session middleware
 app.use(session({
-    secret: 'your_secret_key_here',
+    secret: 'trashbags',
     resave: false,
     saveUninitialized: false
 }));
@@ -22,10 +22,12 @@ app.use(session({
 const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const searchRouter = require('./routes/search');
 
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/search', searchRouter);
 
 // Start server
 const port = 3000;
