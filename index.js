@@ -48,32 +48,57 @@ app.post("/register", async (req, res) => {
         console.log(userdata);
 
         // Redirect the user to index.html after successful registration
-        res.redirect("/"); // Assuming index.html is served at the root path
+        res.redirect("/login.html"); // Assuming index.html is served at the root path
     }
 
 });
 
 
 // Login user 
+// app.post("/login", async (req, res) => {
+//     try {
+//         const check = await collection.findOne({ name: req.body.username });
+//         if (!check) {
+//             res.send("User name cannot found")
+//         }
+//         // Compare the hashed password from the database with the plaintext password
+//         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
+//         if (!isPasswordMatch) {
+//             res.send("wrong Password");
+//         }
+//         else {
+//             res.render("login");
+//         }
+//     }
+//     catch {
+//         res.send("wrong Details");
+//     }
+// });
+
+// Login user 
 app.post("/login", async (req, res) => {
     try {
-        const check = await collection.findOne({ name: req.body.username });
-        if (!check) {
-            res.send("User name cannot found")
+        const user = await collection.findOne({ name: req.body.username });
+        if (!user) {
+            return res.send("User not found");
         }
+
         // Compare the hashed password from the database with the plaintext password
-        const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
+        const isPasswordMatch = await bcrypt.compare(req.body.password, user.password);
         if (!isPasswordMatch) {
-            res.send("wrong Password");
+            return res.send("Incorrect password");
         }
-        else {
-            res.render("login");
-        }
+
+        // If both username and password match, redirect to index.html
+        res.redirect("/index.html");
     }
-    catch {
-        res.send("wrong Details");
+    catch (error) {
+        console.error(error);
+        res.status(500).send("Server error");
     }
 });
+
+
 
 
 // Define Port for Application
