@@ -2,7 +2,7 @@
 
 const express = require("express");
 const path = require("path");
-const session = require('express-session'); // Import express-session module
+const session = require('express-session'); 
 const app = express();
 
 // Middleware
