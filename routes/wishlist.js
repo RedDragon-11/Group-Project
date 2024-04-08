@@ -18,7 +18,7 @@ router.post('/addwishlist', (req, res) => {
     const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
 
     // Create new wishlist document
-    const wishlist = new Wishlist({
+    const wishlist = new wishlist({
         name: wishlistName,
         items: itemName.map((name, index) => ({
             name,
