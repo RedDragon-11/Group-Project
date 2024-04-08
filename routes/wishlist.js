@@ -9,6 +9,10 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const app = require('../app'); // Import the app instance
 
+router.get('/', (req, res) => {
+    res.render('wishlist', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
+});
+
 
 router.post('/addwishlist', (req, res) => {
     const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
@@ -51,6 +55,7 @@ router.get('/wishlist/:name', (req, res) => {
         }
     });
 });
+
 
 
 

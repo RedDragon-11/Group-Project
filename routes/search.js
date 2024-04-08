@@ -6,6 +6,8 @@ router.get('/', (req, res) => {
     res.render('search', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
 });
 
+
+
 // This route handles the POST request for processing the search query
 router.post('/results', (req, res) => {
     // Here you would handle the search query sent from the form
