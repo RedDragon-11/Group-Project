@@ -2,7 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const collection = require('../config');
+const { WishlistItems, collection } = require('../config');
+
+
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 

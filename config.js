@@ -12,7 +12,7 @@ connect.then(() => {
 })
 
 // Create Schema
-const Loginschema = new mongoose.Schema({
+const loginSchema = new mongoose.Schema({
     email: {
         type:String,
         required: true
@@ -23,20 +23,36 @@ const Loginschema = new mongoose.Schema({
     }
 });
 
+const wishlistItemSchema = new mongoose.Schema({
+    itemName: {
+        type: String,
+        required: true
+    },
+    itemURL: {
+        type: String,
+        required: true
+    },
+    itemColor: {
+        type: String,
+        required: true
+    },
+    itemPrice: {
+        type: Number,
+        required: true
+    }
+});
 
-//added
-// const wishlistSchema = new mongoose.Schema({
-//     name: String,
-//     items: [{
-//         name: String,
-//         url: String,
-//         color: String,
-//         price: Number
-//     }]
-// });
-// const Wishlist = mongoose.model('Wishlist', wishlistSchema);
 
-// collection part
-const collection = new mongoose.model("users", Loginschema);
 
-module.exports = collection;
+
+
+
+// Define WishlistItem model
+const WishlistItems = mongoose.model("WishlistItems", wishlistItemSchema);
+
+// Define Collection model
+const collection = mongoose.model("users", loginSchema);
+
+// Export both models
+module.exports = { WishlistItems, collection };
+

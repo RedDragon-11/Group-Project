@@ -21,34 +21,36 @@
 <div class="container">
     <b class="header">Create Wishlist</b>
     <div class="forms">
-        <form action="/addwishlist" method="POST"></form>
+        <form action="/wishlist/addwishlist" method="POST">
+
             <div>
-            <h2>Add Wishlist</h2>
-            <label for="wishlistName">Wishlist Name:</label>
-            <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter wishlist name..." required>
+                <h2>Add Wishlist</h2>
+                <label for="wishlistName">Wishlist Name:</label>
+                <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter wishlist name..." required>
             </div>
-            
+        
             <h3>Items</h3>
             <div id="items-container">
                 <div class="item">
                     <label for="itemName">Item Name:</label>
-                    <input type="text" name="itemName[]" required>
+                    <input type="text" name="itemName" required>
                     
                     <label for="itemURL">URL:</label>
-                    <input type="text" name="itemURL[]" required>
+                    <input type="text" name="itemURL" required>
                     
                     <label for="itemColor">Color:</label>
-                    <input type="text" name="itemColor[]" required>
+                    <input type="text" name="itemColor" required>
                     
                     <label for="itemPrice">Price:</label>
-                    <input type="text" name="itemPrice[]" required>
+                    <input type="text" name="itemPrice" required>
                 </div>
             </div>
-
+        
             <button type="button" onclick="addNewItem()">Add Item</button>
             <br><br>
             <button type="submit">Save Wishlist</button>
         </form>
+        
     </div>
 </div>
 
