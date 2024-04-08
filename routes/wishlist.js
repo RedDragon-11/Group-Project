@@ -1,10 +1,6 @@
-// server.js
-
-
-
 const express = require('express');
 const router = express.Router();
-const collection = require('../config');
+const wldb = require('../config'); // Import the Wishlist model correctly
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const app = require('../app'); // Import the app instance
@@ -13,8 +9,7 @@ router.get('/', (req, res) => {
     res.render('wishlist', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
 });
 
-
-router.post('/addwishlist', (req, res) => {
+router.post('/addwishlist', async (req, res) => {
     const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
 
     // Create new wishlist document
@@ -41,7 +36,7 @@ router.post('/addwishlist', (req, res) => {
 });
 
 // Route to query wishlist by name
-router.get('/wishlist/:name', (req, res) => {
+router.get('/:name', (req, res) => {
     const wishlistName = req.params.name;
 
     Wishlist.findOne({ name: wishlistName }, (err, wishlist) => {
@@ -55,9 +50,6 @@ router.get('/wishlist/:name', (req, res) => {
         }
     });
 });
-
-
-
 
 // Export the router
 module.exports = router;
