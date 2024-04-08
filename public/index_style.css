@@ -128,7 +128,7 @@ transition: .3s ease;
 
 
 
-/*index section*/
+/*index-header section*/
 .index-header {
   min-height: 100vh;
   background: url('Images/homepage-background-img.jpg') no-repeat;
@@ -138,7 +138,7 @@ transition: .3s ease;
 }
 
 .index-header .web-title {
-  font-size: 150px;
+  font-size: 6rem;
   color: #ffffff;
 }
 
@@ -147,7 +147,7 @@ transition: .3s ease;
   text-shadow: 2px 2px 5px rgba(100, 100, 100, 1);
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   /*padding: 3rem 2rem;*/
@@ -186,7 +186,7 @@ transition: .3s ease;
 }
 
 
-/*information section*/
+/*about-us section*/
 .about-us{
 .content .box {
   margin-top: 0;
@@ -277,7 +277,7 @@ button {
 }
 
 
-/*registry examples section*/
+/*registry-examples section*/
 .registry-examples {
   background-color: #b29d8d;
 
@@ -369,7 +369,7 @@ button {
 
 
 
-/*item category section*/
+/*item-category section*/
 .item-category{
   display: flex;
   flex-wrap:wrap;
@@ -406,25 +406,34 @@ border-radius: 12px;
     background-color: #fff;
    /* border: 5px solid red;*/
     padding: 10px;
+    height:auto;
     text-align: center;
+    justify-content: center;
     border-radius: 12px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
   }
   .item-category .grid-item .text{
     font-size: 15px;
     /*border: 5px solid green;*/
     text-align: center;
     overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis;
-    transition: text-overflow 0.3s;
-    color:#6b7555;
+    white-space: wrap; 
+    color:#6b7555; 
+    flex: 1 1 100%;
   }
+  .item-category .grid-container p{
+  margin-top: 10px;
+    color:#6b7555;
+    align-self: flex-end;
+    flex: 1 1 100%;
+  }
+
 .item-category .header-content{
   color:#b29d8d;
 }
-  .grid-container p{
-    color:#6b7555;
-  }
+  
 
   .item-category button{
     border: none;
@@ -463,6 +472,7 @@ border-radius: 12px;
     
   }
 
+  /*footer-content section*/
   .footer-content{
     background-color: #6b7555;
     display: flex;
