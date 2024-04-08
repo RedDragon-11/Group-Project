@@ -57,10 +57,6 @@ body {
   display: none;
 }
 
-.png {
-  margin-left: -100px;
-}
-
 .dropdown {
   float: right;
   overflow: hidden;
