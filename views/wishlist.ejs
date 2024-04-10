@@ -10,7 +10,6 @@
     <header class="topnav">
         <img class="png" src="Images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
         <p class="logo">Wishful Registries</p>
-        <input type="checkbox" id="check">
         <label for="check" class="icons">
           <i class="bx bx-menu" id="menu-icon"></i>
           <i class="bx bx-x" id="close-icon"></i>
@@ -26,154 +25,166 @@
             <a href="/register" style="--i:3;">Register</a>
           <% } %>
         </nav>
-      </header>
+    </header>
 
-<div class="container">
-    <b class="header">Create Wishlist</b>
-    <div class="forms">
-        <form action="/wishlist/addwishlist" method="POST">
+    <div class="container">
+        <b class="header">Create Wishlist</b>
+        <div class="forms">
+            <form action="/wishlist/addwishlist" method="POST" id="wishlistForm">
 
-            <div>
-                <h2>Add Wishlist</h2>
-                <label for="wishlistName">Wishlist Name:</label>
-                <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter wishlist name..." required>
-            </div>
-        
-            <h3>Items</h3>
-            <div id="items-container">
-                <div class="item">
-                    <label for="itemName">Item Name:</label>
-                    <input type="text" name="itemName" required>
-                    
-                    <label for="itemURL">URL:</label>
-                    <input type="text" name="itemURL" required>
-                    
-                    <label for="itemColor">Color:</label>
-                    <input type="text" name="itemColor" required>
-                    
-                    <label for="itemPrice">Price:</label>
-                    <input type="text" name="itemPrice" required>
+                <div>
+                    <h2>Add Wishlist</h2>
+                    <label for="wishlistName">Wishlist Name:</label>
+                    <input type="text" id="wishlistName" name="wishlistName" placeholder="Enter wishlist name..." required>
                 </div>
-            </div>
-        
-            <button type="button" onclick="addNewItem()">Add Item</button>
-            <br><br>
-            <button type="submit">Save Wishlist</button>
-        </form>
-        
-    </div>
-</div>
-
-<script>
-    function addNewItem() {
-        const container = document.getElementById('items-container');
-        const newItem = document.createElement('div');
-        newItem.classList.add('item');
-        newItem.innerHTML = `
-            <label for="itemName">Item Name:</label>
-            <input type="text" name="itemName" required>
             
-            <label for="itemURL">URL:</label>
-            <input type="text" name="itemURL" required>
+                <h3>Items</h3>
+                <div id="items-container">
+                    <div class="item">
+                        <label for="itemName">Item Name:</label>
+                        <input type="text" name="itemName" required>
+                        
+                        <label for="itemURL">URL:</label>
+                        <input type="text" name="itemURL" required>
+                        
+                        <label for="itemColor">Color:</label>
+                        <input type="text" name="itemColor" required>
+                        
+                        <label for="itemPrice">Price:</label>
+                        <input type="text" name="itemPrice" required>
+                    </div>
+                </div>
             
-            <label for="itemColor">Color:</label>
-            <input type="text" name="itemColor" required>
+                <button type="button" onclick="addNewItem()">Add Item</button>
+                <br><br>
+                <button type="button" onclick="saveWishlist()">Save Wishlist</button>
+            </form>
             
-            <label for="itemPrice">Price:</label>
-            <input type="text" name="itemPrice" required>
-        `;
-        container.appendChild(newItem);
-    }
-</script>
-<style>
-    /* Style for horizontal alignment */
-    .item label,
-    .item input {
-        display: inline-block;
-        margin-right: 10px;
-    }
-    .item label {
-        width: 100px; /* Adjust width as needed */
-        text-align: right;
-    }
-</style>
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
-    <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-</svg>
-
-<section class="footer-content">
-    <div class="list">
-        <a>Questions?</a>
-        <ul class="list-unstyled">
-            <li class="list-content">
-                Call Us
-            </li>
-            <li class="list-content">
-                Email Us
-            </li>
-            <li class="list-content">
-                Help
-            </li>
-            <li class="list-content">
-                Feedback
-            </li>
-        </ul>
+        </div>
     </div>
 
-    <div class="list">
-        <a>Company Info</a>
-        <ul class="list-unstyled">
-            <li class="list-content">
-                About Us
-            </li>
-            <li class="list-content">
-                Wedding Guides
-            </li>
-            <li class="list-content">
-                Birthday Guides
-            </li>
-            <li class="list-content">
-                News
-            </li>
-            <li class="list-content">
-                Careers
-            </li>
-        </ul>
-    </div>
-    <div class="list">
-        <a>Member Info</a>
-        <ul class="list-unstyled">
-            <li class="list-content">
-                FAQs
-            </li>
-            <li class="list-content">
-                Find A Registry
-            </li>
-            <li class="list-content">
-                Monthly Prizes
-            </li>
-        </ul>
-    </div>
+    <script>
+        function addNewItem() {
+            const container = document.getElementById('items-container');
+            const newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.innerHTML = `
+                <label for="itemName">Item Name:</label>
+                <input type="text" name="itemName" required>
+                
+                <label for="itemURL">URL:</label>
+                <input type="text" name="itemURL" required>
+                
+                <label for="itemColor">Color:</label>
+                <input type="text" name="itemColor" required>
+                
+                <label for="itemPrice">Price:</label>
+                <input type="text" name="itemPrice" required>
+            `;
+            container.appendChild(newItem);
+        }
 
-    <div class="list">
-        <a>For Partners</a>
-        <ul class="list-unstyled">
-            <li class="list-content">
-                Business Contact
-            </li>
-            <li class="list-content">
-                Partner Login
-            </li>
-            <li class="list-content">
-                Partner Blog
-            </li>
-            <li class="list-content">
-                Advertise Here
-            </li>
-        </ul>
-    </div>
-</section>
+        function saveWishlist() {
+            // Simulate successful save
+            // Here you would typically perform an AJAX request to submit the form data
+            // and handle the response accordingly
+            // For the sake of simplicity, I'll just display a confirmation box
+            const confirmation = confirm('Wishlist successfully added!'); // Display confirmation box
+            if (confirmation) {
+                document.getElementById('wishlistForm').submit(); // Submit the form
+            }
+        }
+    </script>
+
+    <style>
+        /* Style for horizontal alignment */
+        .item label,
+        .item input {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .item label {
+            width: 100px; /* Adjust width as needed */
+            text-align: right;
+        }
+    </style>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
+        <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+
+    <section class="footer-content">
+        <div class="list">
+            <a>Questions?</a>
+            <ul class="list-unstyled">
+                <li class="list-content">
+                    Call Us
+                </li>
+                <li class="list-content">
+                    Email Us
+                </li>
+                <li class="list-content">
+                    Help
+                </li>
+                <li class="list-content">
+                    Feedback
+                </li>
+            </ul>
+        </div>
+
+        <div class="list">
+            <a>Company Info</a>
+            <ul class="list-unstyled">
+                <li class="list-content">
+                    About Us
+                </li>
+                <li class="list-content">
+                    Wedding Guides
+                </li>
+                <li class="list-content">
+                    Birthday Guides
+                </li>
+                <li class="list-content">
+                    News
+                </li>
+                <li class="list-content">
+                    Careers
+                </li>
+            </ul>
+        </div>
+        <div class="list">
+            <a>Member Info</a>
+            <ul class="list-unstyled">
+                <li class="list-content">
+                    FAQs
+                </li>
+                <li class="list-content">
+                    Find A Registry
+                </li>
+                <li class="list-content">
+                    Monthly Prizes
+                </li>
+            </ul>
+        </div>
+
+        <div class="list">
+            <a>For Partners</a>
+            <ul class="list-unstyled">
+                <li class="list-content">
+                    Business Contact
+                </li>
+                <li class="list-content">
+                    Partner Login
+                </li>
+                <li class="list-content">
+                    Partner Blog
+                </li>
+                <li class="list-content">
+                    Advertise Here
+                </li>
+            </ul>
+        </div>
+    </section>
 
 </body>
 </html>

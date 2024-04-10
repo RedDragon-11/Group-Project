@@ -33,7 +33,7 @@ router.post('/addwishlist', async (req, res) => {
         await newItem.save();
 
         // Send a success response
-        res.status(201).send("Wishlist item added successfully");
+        res.redirect('/search');
     } catch (error) {
         // If an error occurs, send an error response
         console.error("Error adding wishlist item:", error);
