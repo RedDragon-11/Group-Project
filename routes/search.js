@@ -1,5 +1,7 @@
 const express = require('express');
+const { WishlistItems } = require('../config');
 const router = express.Router();
+
 
 // This route handles the GET request for displaying the search page
 router.get('/', (req, res) => {
@@ -9,23 +11,17 @@ router.get('/', (req, res) => {
 
 
 // This route handles the POST request for processing the search query
-router.post('/results', (req, res) => {
-    // Here you would handle the search query sent from the form
-    const searchQuery = req.body.search; // Assuming your form sends the search query with the name "search"
+router.get('/results', (req, res) => {
+    const searchQuery = req.body.search;
 
-    // Process the search query, perform database search, etc.
-
-    // Render the search results page with the results (assuming you have a search_results.ejs file)
-
-
-    
-    // res.render('search_results', { results: /* Pass your search results here */ });
-
-
-    //This is where i left off^^
-
-
-
+    WishlistItems.find({ createdBy: searchQuery })
+    .then(items => {
+        res.render('search', { loggedinUser: req.session.user, searchResults: items });
+    })
+    .catch(error => {
+        console.error('Error querying wishlist items:', error);
+        res.status(500).send('Internal Server Error');
+    });
 });
 
 module.exports = router;

@@ -37,16 +37,29 @@
                 <input type="text" id="search" name="search" placeholder="Enter keywords..." required>
             </div>
             <button type="submit" id="searchButton">Search</button>
-            <a href="/wishlist" class="create-button">Create Wishlist</a> <!-- Updated the href attribute -->
+            <a href="/wishlist" class="create-button">Create Wishlist</a> 
         </form>
     </div>
 </div>
 
-<!-- New box for search results -->
+
 <div class="container">
     <b class="header">Search Results</b>
     <div class="forms">
-        <!-- Add your search results content here -->
+        <% if (searchResults && searchResults.length > 0) { %>
+            <ul>
+                <% searchResults.forEach(item => { %>
+                    <li>
+                        <strong>Item Name:</strong> <%= item.itemName %><br>
+                        <strong>URL:</strong> <%= item.itemURL %><br>
+                        <strong>Color:</strong> <%= item.itemColor %><br>
+                        <strong>Price:</strong> <%= item.itemPrice %><br>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No results found.</p>
+        <% } %>
     </div>
 </div>
 
