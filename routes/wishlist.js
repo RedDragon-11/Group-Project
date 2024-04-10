@@ -4,8 +4,10 @@ const express = require('express');
 const router = express.Router();
 const { WishlistItems, collection } = require('../config');
 
+
+
 router.get('/', (req, res) => {
-    res.render('wishlist');
+    res.render('wishlist', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
 });
 
 
