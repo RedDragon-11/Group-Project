@@ -14,7 +14,7 @@ connect.then(() => {
 // Create Schema
 const loginSchema = new mongoose.Schema({
     email: {
-        type:String,
+        type: String,
         required: true
     },
     password: {
@@ -25,19 +25,19 @@ const loginSchema = new mongoose.Schema({
 
 const wishlistItemSchema = new mongoose.Schema({
     itemName: {
-        type: String,
+        type: Array,
         required: true
     },
     itemURL: {
-        type: String,
+        type: Array,
         required: true
     },
     itemColor: {
-        type: String,
+        type: Array,
         required: true
     },
     itemPrice: {
-        type: Number,
+        type: Array,
         required: true
     }
 });
