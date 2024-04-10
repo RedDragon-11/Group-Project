@@ -24,6 +24,10 @@ const loginSchema = new mongoose.Schema({
 });
 
 const wishlistItemSchema = new mongoose.Schema({
+    wishlistName: {
+        type: String,
+        required: true,
+    },
     itemName: {
         type: Array,
         required: true

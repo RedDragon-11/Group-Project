@@ -16,10 +16,11 @@ router.get('/', (req, res) => {
 router.post('/addwishlist', async (req, res) => {
     try {
         // Extract wishlist item data from request body
-        const { itemName, itemURL, itemColor, itemPrice } = req.body;
+        const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
 
         // Create a new wishlist item document
         const newItem = new WishlistItems({
+            wishlistName,
             itemName,
             itemURL,
             itemColor,
