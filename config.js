@@ -43,6 +43,10 @@ const wishlistItemSchema = new mongoose.Schema({
     itemPrice: {
         type: Array,
         required: true
+    },
+    createdBy: {
+        type: String, // Assuming the email is stored as a string
+        required: true
     }
 });
 

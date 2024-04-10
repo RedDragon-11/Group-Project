@@ -4,15 +4,9 @@ const express = require('express');
 const router = express.Router();
 const { WishlistItems, collection } = require('../config');
 
-
-
 router.get('/', (req, res) => {
-    res.render('wishlist', { loggedInUser: req.session.user }); // Assuming you have a search.ejs file in your views directory
+    res.render('wishlist', { loggedInUser: req.session.user }); 
 });
-
-
-
-
 
 // Route to add a new wishlist item
 router.post('/addwishlist', async (req, res) => {
@@ -20,13 +14,17 @@ router.post('/addwishlist', async (req, res) => {
         // Extract wishlist item data from request body
         const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
 
+        // Get the email of the logged-in user
+        const userEmail = req.session.user.email;
+
         // Create a new wishlist item document
         const newItem = new WishlistItems({
             wishlistName,
             itemName,
             itemURL,
             itemColor,
-            itemPrice
+            itemPrice,
+            createdBy: userEmail // Associate the wishlist with the email of the user who created it
         });
 
         // Save the new wishlist item to the database
