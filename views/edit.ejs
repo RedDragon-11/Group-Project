@@ -4,19 +4,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Edit Wishlist Item</title>
+    <title>Edit Wishlist</title>
     <!-- Add any required stylesheets or scripts -->
 </head>
 <body>
-    <h1>Edit Wishlist Item</h1>
+    <h1>Edit Wishlist</h1>
     <p>Wishlist Name: <%= wishlistItem.wishlistName %></p>
-    <p>Item Name: <%= wishlistItem.itemName %></p>
-    <!-- Display other wishlist item details -->
 
     <form action="/edit/<%= wishlistItem._id %>/update" method="post">
-
-        <label for="itemBought">Item Bought:</label>
-        <input type="checkbox" id="itemBought" name="itemBought" <%= wishlistItem.itemBought ? 'checked' : '' %>>
+        <% wishlistItem.itemName.forEach((itemName, index) => { %>
+            <div>
+                <label for="item<%= index %>">Item bought:</label>
+                <input type="checkbox" id="item<%= index %>" name="itemBought[<%= index %>]" value="true" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
+                <label for="item<%= index %>"><%= itemName %></label>
+            </div>
+        <% }) %>
         <button type="submit">Update</button>
     </form>
 </body>

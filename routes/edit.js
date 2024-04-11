@@ -18,17 +18,22 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST route to handle form submission and update wishlist item
+// POST route to handle updating the bought status of all items
 router.post('/:id/update', async (req, res) => {
     try {
         const wishlistItemId = req.params.id;
-        const updatedItemBought = req.body.itemBought === 'on'; // assuming it's a checkbox
-        const updatedWishlistItem = await WishlistItems.findByIdAndUpdate(
-            wishlistItemId,
-            { $set: { itemBought: updatedItemBought } },
-            { new: true }
-        );
-        res.redirect('/'); // Redirect to the home page or any other page after successful update
+        const itemBoughtValues = Object.values(req.body.itemBought || {}); // Get array of checkbox values
+        const wishlistItem = await WishlistItems.findById(wishlistItemId);
+
+        if (!wishlistItem) {
+            return res.status(404).send('Wishlist item not found');
+        }
+
+        // Map checkbox values to boolean values for itemBought array
+        wishlistItem.itemBought = wishlistItem.itemBought.map((_, index) => itemBoughtValues.includes(index.toString()));
+        await wishlistItem.save();
+
+        res.redirect(`/edit/${wishlistItemId}`);
     } catch (error) {
         console.error('Server error:', error);
         res.status(500).send('Internal Server Error');
