@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
 
 
 // This route handles the POST request for processing the search query
- router.get('/', async (req, res) => {
+ router.post('/', async (req, res) => {
     const searchQuery = req.body.search;
-    if (searchQuery = null){
-        req.session.results = req.session.user
+    if (searchQuery == null){
+        req.session.results = null
     }
     else {
     try {
@@ -36,20 +36,6 @@ router.get('/', (req, res) => {
     }
     }); 
 
-/* router.post('/', (req, res) => {
-    const searchQuery = req.body.search;
-    
-    WishlistItems.find({ createdBy: searchQuery })
-    .then(items => {
-        res.render('search', { 
-            loggedInUser: req.session.user, 
-            searchResults: items 
-        });
-    })
-    .catch(error => {
-        console.error('Error querying wishlist items:', error);
-        res.status(500).send('Internal Server Error');
-    });
-}); */
+
 
 module.exports = router;
