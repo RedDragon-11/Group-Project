@@ -54,7 +54,11 @@
                         <input type="text" name="itemPrice" required>
 
                         <label for="itemBought">Bought:</label>
-                        <input type="text" name="itemBought" required>
+                        <select name="itemBought" required>
+                            <option value="false" selected>False</option>
+                            <option value="true">True</option>
+                        </select>
+
                     </div>
                 </div>
             
@@ -85,7 +89,10 @@
                 <input type="text" name="itemPrice" required>
 
                 <label for="itemBought">Bought:</label>
-                <input type="text" name="itemBought" required>
+                <select name="itemBought" required>
+                    <option value="false" selected>False</option>
+                    <option value="true">True</option>
+                </select>
             `;
             container.appendChild(newItem);
         }
