@@ -50,10 +50,8 @@
             <ul>
                 <% searchResults.forEach(item => { %>
                     <li>
-                        <strong>Item Name:</strong> <%= item.itemName %><br>
-                        <strong>URL:</strong> <%= item.itemURL %><br>
-                        <strong>Color:</strong> <%= item.itemColor %><br>
-                        <strong>Price:</strong> <%= item.itemPrice %><br>
+                        <a href="/edit/<%= item._id %>"><strong>Wishlist Name:</strong> <%= item.wishlistName %></a><br>
+                        <!-- Display other wishlist details -->
                     </li>
                 <% }) %>
             </ul>

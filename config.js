@@ -44,12 +44,15 @@ const wishlistItemSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
+    itemBought: {
+        type: Array,
+        default: false
+    },
     createdBy: {
         type: String, // Assuming the email is stored as a string
         required: true
     }
 });
-
 
 
 

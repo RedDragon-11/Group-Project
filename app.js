@@ -24,8 +24,12 @@ const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const searchRouter = require('./routes/search');
 const wishlistRouter = require('./routes/wishlist');
+// const editRouter = require('./routes/edit');
+
 
 const logoutRouter = require('./routes/logout'); // Add this line
+
+
 
 
 app.use('/', indexRouter);
@@ -33,6 +37,9 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/search', searchRouter);
 app.use('/wishlist', wishlistRouter);
+// app.use('/edit', editRouter);
+
+
 
 app.use('/logout', logoutRouter); // Add this line
 

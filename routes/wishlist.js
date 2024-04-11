@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 router.post('/addwishlist', async (req, res) => {
     try {
         // Extract wishlist item data from request body
-        const { wishlistName, itemName, itemURL, itemColor, itemPrice } = req.body;
+        const { wishlistName, itemName, itemURL, itemColor, itemPrice, itemBought } = req.body;
 
         // Get the email of the logged-in user
         const userEmail = req.session.user.email;
@@ -24,6 +24,7 @@ router.post('/addwishlist', async (req, res) => {
             itemURL,
             itemColor,
             itemPrice,
+            itemBought,
             createdBy: userEmail // Associate the wishlist with the email of the user who created it
         });
 
