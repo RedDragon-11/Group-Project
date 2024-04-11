@@ -19,17 +19,18 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST route to handle updating the bought status of all items
+
 router.post('/:id/update', async (req, res) => {
     try {
         const wishlistItemId = req.params.id;
-        const itemBoughtValues = Object.values(req.body.itemBought || {}); // Get array of checkbox values
+        const itemBoughtValues = req.body.itemBought || []; // Get array of checkbox values
         const wishlistItem = await WishlistItems.findById(wishlistItemId);
 
         if (!wishlistItem) {
             return res.status(404).send('Wishlist item not found');
         }
 
-        // Map checkbox values to boolean values for itemBought array
+        // Update itemBought array based on checkbox values
         wishlistItem.itemBought = wishlistItem.itemBought.map((_, index) => itemBoughtValues.includes(index.toString()));
         await wishlistItem.save();
 
@@ -39,5 +40,7 @@ router.post('/:id/update', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+
 
 module.exports = router;
