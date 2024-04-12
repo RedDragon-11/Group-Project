@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Create Wishlist</title>
     <link href="create_wishlist_style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -20,7 +21,7 @@
           <a href="/" style="--i:0;">Home</a>
           <% if (loggedInUser) { %>
             <a href="/search" style="--i:1;">Wishlist Search</a>
-            <a href="#" style="--i:2;">Logged in as: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
+            <a href="#" style="--i:2;">Welcome Back: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
             <a href="/logout" style="--i:3;">Logout</a>
           <% } else { %>
             <a href="/login" style="--i:2;">Login</a>

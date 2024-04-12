@@ -31,19 +31,20 @@
       </header>
 
       <div class="container">
-        <b class="header">Editing wishlist: <%= wishlistItem.wishlistName %></b>
+        <b class="header">Wishlist: <%= wishlistItem.wishlistName %></b>
         <div class="forms">
             <form action="/edit/<%= wishlistItem._id %>/update" method="post">
                 <% wishlistItem.itemName.forEach((itemName, index) => { %>
                     <div>
-                        <label for="item<%= index %>">Item bought:</label>
-                        <!-- Ensure proper checkbox naming -->
-                        <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
+                        <label for="item<%= index %>">Item Added:</label>
+                        
                         <label for="item<%= index %>"><%= itemName %></label>
                         <!-- Display itemColor -->
                         <span>| Color: <%= wishlistItem.itemColor[index] %></span>
                         <!-- Display itemPrice -->
                         <span>| Price: $<%= wishlistItem.itemPrice[index] %></span>
+                        <!-- Ensure proper checkbox naming -->
+                        <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
                     </div>
                 <% }) %>
                 <button type="submit">Update</button>

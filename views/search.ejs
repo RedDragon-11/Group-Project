@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Team Registry: Search Wishlists</title>
     <link href="search_style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
           <a href="/" style="--i:0;">Home</a>
           <% if (loggedInUser) { %>
             <a href="/search" style="--i:1;">Wishlist Search</a>
-            <a href="#" style="--i:2;">Logged in as: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
+            <a href="#" style="--i:2;">Welcome Back: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
             <a href="/logout" style="--i:3;">Logout</a>
           <% } else { %>
             <a href="/login" style="--i:2;">Login</a>
@@ -29,7 +30,7 @@
           <% } %>
         </nav>
       </header>
-
+<!--Wishlist Search-->
 <div class="container">
     <b class="header">Search for Wishlists</b>
     <div class="forms">
@@ -44,15 +45,16 @@
     </div>
 </div>
 
-
+<!--Wishlist Search Results-->
 <div class="container">
     <b class="header">Search Results</b>
     <div class="forms">
+        <!--<strong>Wishlist Name: </strong>-->
         <% if (searchResults && searchResults.length > 0) { %>
             <ul>
                 <% searchResults.forEach(item => { %>
                     <li>
-                        <a href="/edit/<%= item._id %>"><strong>Wishlist Name:</strong> <%= item.wishlistName %></a><br>
+                        <a href="/edit/<%= item._id %>" style="text-decoration: none;"> <%= item.wishlistName %></a><br>
                         <!-- Display other wishlist details -->
                     </li>
                 <% }) %>

@@ -100,7 +100,7 @@
     left: 0;
     width: 100%;
     height: 0;
-    background: red;
+    background: #6b7555;
     overflow: hidden;
     transition: .3s ease;
   }
