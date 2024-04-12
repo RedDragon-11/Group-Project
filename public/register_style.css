@@ -34,26 +34,27 @@
     color: #fff;
     text-decoration: none;
     font-weight: 400;
-    margin-left: 2.5rem;
-  
+    margin-left: 4.5rem;
+
   }
-  
-  .navbar a:hover{
+
+  .navbar a :hover{
     text-decoration-line:underline;
     text-decoration-thickness: 0.7px;
     text-underline-offset: 12px;
-  
+  }
+
+  .logo-container{
+    display: flex;
+    align-items: center;
   }
   
   .logo {
-    font-size: 40px;
+    font-size: 35px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    float: left;
-    position: absolute;
-    padding-left: 70px;
-   
+   margin-left: 10px;
   }
   
   
@@ -126,8 +127,7 @@
     transition-delay: calc(.15s * var(--i));
   }
   }
-  
-  
+
   
   /*account creation section*/
   .container{
