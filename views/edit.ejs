@@ -37,14 +37,17 @@
                 <% wishlistItem.itemName.forEach((itemName, index) => { %>
                     <div>
                         <label for="item<%= index %>">Item Added:</label>
-                        
                         <label for="item<%= index %>"><%= itemName %></label>
-                        <!-- Display itemColor -->
                         <span>| Color: <%= wishlistItem.itemColor[index] %></span>
-                        <!-- Display itemPrice -->
                         <span>| Price: $<%= wishlistItem.itemPrice[index] %></span>
-                        <!-- Ensure proper checkbox naming -->
-                        <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
+                        <!-- Use ternary operator to determine if checkbox should be checked -->
+                        <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <% if (wishlistItem.itemBought[index]) { %> checked <% } %>>
+                        <!-- Display the itemBought status -->
+                        <% if (wishlistItem.itemBought[index]) { %>
+                            <span>Bought</span>
+                        <% } else { %>
+                            <span>Not Bought</span>
+                        <% } %>
                     </div>
                 <% }) %>
                 <button type="submit">Update</button>
