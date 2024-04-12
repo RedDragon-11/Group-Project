@@ -3,14 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family:Arial, Helvetica, sans-serif ;
   }
   
   body{
     min-height: 100vh;
-    background: url('images/homepage-background-img.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+
   }
   
   .topnav {
@@ -69,14 +67,10 @@
     font-size: 2.8rem;
     color: #fff;
     cursor: pointer;
-    display: none;
   }
   
   
   @media (max-width:1500px) {
-  .topnav{
-    padding: 30px 15px;
-  }
   
   .icons{
     display: inline-flex;
@@ -383,6 +377,7 @@ button {
   font-size: 60px;
   text-align: center;
   margin-bottom: 50px;
+  color:#b29d8d;
 }
 
   .item-category .grid-container {
@@ -399,8 +394,8 @@ button {
     width: 200px;
     height: 200px;
 /* border: 5px solid red;*/    
-object-fit: scale-down;
-border-radius: 12px;
+  object-fit: scale-down;
+  border-radius: 12px;
   }
 
   .item-category .grid-item{
@@ -431,11 +426,6 @@ border-radius: 12px;
     align-self: flex-end;
     flex: 1 1 100%;
   }
-
-.item-category .header-content{
-  color:#b29d8d;
-}
-  
 
   .item-category button{
     border: none;
@@ -481,7 +471,6 @@ border-radius: 12px;
     flex-wrap: wrap;
     justify-content: space-around;
     color: #eceae1;
-  
 
     .list{ 
   padding-left: 40px;
