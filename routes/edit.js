@@ -11,7 +11,9 @@ router.get('/:id', async (req, res) => {
         if (!wishlistItem) {
             return res.status(404).send('Wishlist item not found');
         }
-        res.render('edit', { wishlistItem });
+        // Assuming loggedInUser is set in the session
+        const loggedInUser = req.session.user; // Adjust this according to your session management
+        res.render('edit', { wishlistItem, loggedInUser });
     } catch (error) {
         console.error('Server error:', error);
         res.status(500).send('Internal Server Error');
@@ -40,7 +42,5 @@ router.post('/:id/update', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
 
 module.exports = router;

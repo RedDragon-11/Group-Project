@@ -1,29 +1,127 @@
-<!-- edit.ejs -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Edit Wishlist</title>
-    <!-- Add any required stylesheets or scripts -->
+    <title>Team Registry: Search Wishlists</title>
+    <link rel="stylesheet" type="text/css" href="/edit_style.css">
 </head>
 <body>
-    <h1>Edit Wishlist</h1>
-    <p>Wishlist Name: <%= wishlistItem.wishlistName %></p>
-    <!-- edit.ejs -->
 
-    <form action="/edit/<%= wishlistItem._id %>/update" method="post">
-        <% wishlistItem.itemName.forEach((itemName, index) => { %>
-            <div>
-                <label for="item<%= index %>">Item bought:</label>
-                <!-- Ensure proper checkbox naming -->
-                <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
-                <label for="item<%= index %>"><%= itemName %></label>
-            </div>
-        <% }) %>
-        <button type="submit">Update</button>
-    </form>
-    
+    <header class="topnav">
+        <img class="png" src="/Images/registry-website-logo.png" alt="Website Logo" width="60" height="60">
+        <p class="logo">Wishful Registries</p>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+          <i class="bx bx-menu" id="menu-icon"></i>
+          <i class="bx bx-x" id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+          <a href="/" style="--i:0;">Home</a>
+          <% if (loggedInUser) { %>
+            <a href="/search" style="--i:1;">Wishlist Search</a>
+            <a href="#" style="--i:2;">Logged in as: <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
+            <a href="/logout" style="--i:3;">Logout</a>
+          <% } else { %>
+            <a href="/login" style="--i:2;">Login</a>
+            <a href="/register" style="--i:3;">Register</a>
+          <% } %>
+        </nav>
+      </header>
+
+<div class="container">
+    <b class="header">Editing wishlist: <%= wishlistItem.wishlistName %></b>
+    <div class="forms">
+        <form action="/edit/<%= wishlistItem._id %>/update" method="post">
+            <% wishlistItem.itemName.forEach((itemName, index) => { %>
+                <div>
+                    <label for="item<%= index %>">Item bought:</label>
+                    <!-- Ensure proper checkbox naming -->
+                    <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
+                    <label for="item<%= index %>"><%= itemName %></label>
+                </div>
+            <% }) %>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
+    <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+    </path>
+</svg>
+
+<section class="footer-content">
+    <div class="list">
+        <a>Questions?</a>
+        <ul class="list-unstyled">
+            <li class="list-content">
+                Call Us
+            </li>
+            <li class="list-content">
+                Email Us
+            </li>
+            <li class="list-content">
+                Help
+            </li>
+            <li class="list-content">
+                Feedback
+            </li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <a>Company Info</a>
+        <ul class="list-unstyled">
+            <li class="list-content">
+                About Us
+            </li>
+            <li class="list-content">
+                Wedding Guides
+            </li>
+            <li class="list-content">
+                Birthday Guides
+            </li>
+            <li class="list-content">
+                News
+            </li>
+            <li class="list-content">
+                Careers
+            </li>
+        </ul>
+    </div>
+    <div class="list">
+        <a>Member Info</a>
+        <ul class="list-unstyled">
+            <li class="list-content">
+                FAQs
+            </li>
+            <li class="list-content">
+                Find A Registry
+            </li>
+            <li class="list-content">
+                Monthly Prizes
+            </li>
+        </ul>
+    </div>
+
+    <div class="list">
+        <a>For Partners</a>
+        <ul class="list-unstyled">
+            <li class="list-content">
+                Business Contact
+            </li>
+            <li class="list-content">
+                Partner Login
+            </li>
+            <li class="list-content">
+                Partner Blog
+            </li>
+            <li class="list-content">
+                Advertise Here
+            </li>
+        </ul>
+    </div>
+</section>
 
 </body>
 </html>
