@@ -28,22 +28,29 @@
         </nav>
       </header>
 
-<div class="container">
-    <b class="header">Editing wishlist: <%= wishlistItem.wishlistName %></b>
-    <div class="forms">
-        <form action="/edit/<%= wishlistItem._id %>/update" method="post">
-            <% wishlistItem.itemName.forEach((itemName, index) => { %>
-                <div>
-                    <label for="item<%= index %>">Item bought:</label>
-                    <!-- Ensure proper checkbox naming -->
-                    <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
-                    <label for="item<%= index %>"><%= itemName %></label>
-                </div>
-            <% }) %>
-            <button type="submit">Update</button>
-        </form>
+      <div class="container">
+        <b class="header">Editing wishlist: <%= wishlistItem.wishlistName %></b>
+        <div class="forms">
+            <form action="/edit/<%= wishlistItem._id %>/update" method="post">
+                <% wishlistItem.itemName.forEach((itemName, index) => { %>
+                    <div>
+                        <label for="item<%= index %>">Item bought:</label>
+                        <!-- Ensure proper checkbox naming -->
+                        <input type="checkbox" id="item<%= index %>" name="itemBought" value="<%= index %>" <%= wishlistItem.itemBought[index] ? 'checked' : '' %>>
+                        <label for="item<%= index %>"><%= itemName %></label>
+                        <!-- Display itemColor -->
+                        <span>| Color: <%= wishlistItem.itemColor[index] %></span>
+                        <!-- Display itemPrice -->
+                        <span>| Price: $<%= wishlistItem.itemPrice[index] %></span>
+                    </div>
+                <% }) %>
+                <button type="submit">Update</button>
+            </form>
+        </div>
     </div>
-</div>
+    
+    
+    
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
     <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
