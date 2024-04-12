@@ -45,33 +45,6 @@
     </div>
 </div>
 
-
-
-<!-- Add a new section for displaying the user's wishlists -->
-<div class="container">
-    <b class="header">My Wishlists</b>
-    <div class="forms">
-        <% if (loggedInUser && loggedInUser.email) { %> <!-- Updated to check loggedInUser.email -->
-            <% const userEmail = loggedInUser.email; %>
-            <% if (userWishlists && userWishlists.length > 0) { %>
-                <ul>
-                    <% userWishlists.forEach(item => { %>
-                        <li>
-                            <a href="/edit/<%= item._id %>" style="text-decoration: none;"> <%= item.wishlistName %></a><br>
-                            <!-- Display other wishlist details -->
-                        </li>
-                    <% }) %>
-                </ul>
-            <% } else { %>
-                <p>No wishlists found for <%= userEmail %>.</p>
-            <% } %>
-        <% } else { %>
-            <p>Please log in to view your wishlists.</p>
-        <% } %>
-    </div>
-</div>
-
-
 <!--Wishlist Search Results-->
 <div class="container">
     <b class="header">Search Results</b>
