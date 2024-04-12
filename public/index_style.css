@@ -101,7 +101,7 @@
   
   
   #check:checked~.navbar{
-    height: 17.7rem;
+    height: auto;
   }
   
   .navbar a{
