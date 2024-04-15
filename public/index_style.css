@@ -32,6 +32,7 @@
     text-decoration: none;
     font-weight: 400;
     margin-left: 2rem;
+    padding-right: 20px;
   }
 
   .navbar a:hover{
