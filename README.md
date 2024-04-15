@@ -8,8 +8,12 @@ Class: CSCI 3300 Software Engineering
 1. Run node-v20.11.1-x64.msi to install Node.js
 2. Double click the batch file named "Update" to install the modules require to run.
 3. Once the Update.bat is finished, double click the "Run" batch file
-4. Go to a web browser of your choosing and type localhost:3000
+4. To open website, either:
+
+        A. Click on the "Website Link" file
+        B. Go to a web browser of your choosing and type localhost:3000
    
+
 ##########Website Useage##########
 
 Login/Register Feature: Within the Nav bar at the top of the page is the Login and Register Buttons. They will take you to a very
