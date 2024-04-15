@@ -38,7 +38,11 @@
                 <% wishlistItem.itemName.forEach((itemName, index) => { %>
                     <div>
                         <label for="item<%= index %>">Item Added:</label>
-                        <label for="item<%= index %>"><%= itemName %></label>
+                        <% if (wishlistItem.itemURL[index]) { %> <!-- Check if item URL exists -->
+                            <a href="<%= wishlistItem.itemURL[index] %>"><%= itemName %></a>
+                        <% } else { %>
+                            <%= itemName %>
+                        <% } %>
                         <span>| Color: <%= wishlistItem.itemColor[index] %></span>
                         <span>| Price: $<%= wishlistItem.itemPrice[index] %></span>
                         <!-- Use ternary operator to determine if checkbox should be checked -->
@@ -58,11 +62,24 @@
     
     
     
+    
+
+
+
+    
+    
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="viewBox">
     <path fill="#6b7555" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,272C480,288,600,288,720,272C840,256,960,224,1080,208C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
     </path>
 </svg>
+
+
+
+
+
+
+
 
 <section class="footer-content">
     <div class="list">
