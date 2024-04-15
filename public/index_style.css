@@ -27,13 +27,11 @@
   }
   
   .navbar a {
-    padding-right: 2.5rem;
-    font-size: 30px;
+    font-size: calc(1vw + 1vh);
     color: #fff;
     text-decoration: none;
     font-weight: 400;
-    margin-left: 4.5rem;
-
+    margin-left: 2rem;
   }
 
   .navbar a:hover{
@@ -48,7 +46,7 @@
   }
   
   .logo {
-    font-size: 35px;
+    font-size: 25px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
@@ -57,7 +55,7 @@
   
   
   #check{
-    display:none ;
+    display: none;
   }
   
   
@@ -67,10 +65,11 @@
     font-size: 2.8rem;
     color: #fff;
     cursor: pointer;
+    display: none;
   }
   
   
-  @media (max-width:1500px) {
+  @media (max-width:1200px) {
   
   .icons{
     display: inline-flex;

@@ -20,11 +20,10 @@
     <i class="bx bx-x" id="close-icon"></i>
   </label>
   <nav class="navbar">
-    
     <a href="/" style="--i:0;">Home</a>
     <% if (loggedInUser) { %>
       <a href="/search" style="--i:1;">Wishlist Search</a>
-      <a href="#" style="--i:2;">Welcome Back: 
+      <a href="#" style="--i:2;">Welcome: 
         <%= loggedInUser.email %></a> <!-- Changed from <p> to <a> -->
       <a href="/logout" style="--i:3;">Logout</a>
     <% } else { %>
@@ -74,7 +73,7 @@
   </div>
   <div class="container">
     <div class="image-container">
-      <a href="/search">
+      <a href="/register">
         <img src="Images/pexels-emma-bauso-2253870.jpg">
         <div class="text">
           <p>Weddings</p>
@@ -82,7 +81,7 @@
       </a>
     </div>
     <div class="image-container">
-      <a href="/search">
+      <a href="/register">
         <img src="Images/pexels-alex-tim-754953.jpg">
         <div class="text">
           <p>Baby Showers</p>
@@ -90,7 +89,7 @@
       </a>
     </div>
     <div class="image-container">
-      <a href="/search">
+      <a href="/register">
         <img src="Images/pexels-cottonbro-studio-6800133.jpg">
         <div class="text">
           <p>Birthdays</p>
