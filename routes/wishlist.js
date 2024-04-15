@@ -17,6 +17,9 @@ router.post('/addwishlist', async (req, res) => {
         // Get the email of the logged-in user
         const userEmail = req.session.user.email;
 
+        // Convert itemBought values from string to boolean
+        const itemBoughtBool = itemBought.map(value => value === 'true');
+
         // Create a new wishlist item document
         const newItem = new WishlistItems({
             wishlistName,
@@ -24,7 +27,7 @@ router.post('/addwishlist', async (req, res) => {
             itemURL,
             itemColor,
             itemPrice,
-            itemBought,
+            itemBought: itemBoughtBool,
             createdBy: userEmail // Associate the wishlist with the email of the user who created it
         });
 
