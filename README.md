@@ -11,6 +11,7 @@ Class: CSCI 3300 Software Engineering
 4. Go to a web browser of your choosing and type localhost:3000
    
 ##########Website Useage##########
+
 Login/Register Feature: Within the Nav bar at the top of the page is the Login and Register Buttons. They will take you to a very
 simplistic page were you can create an account and login with that account. There is no Forgot Password Feature, so remember the email/password that you use.
 
