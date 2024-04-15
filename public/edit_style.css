@@ -250,3 +250,20 @@ font-size:30px;
       }
     }
   }
+
+
+  html, body {
+    
+    
+    display: flex;
+    flex-direction: column; /* Arrange children elements in a column */
+  }
+  
+  .container {
+    flex: 1; /* Allow the container to grow and take up remaining space */
+  }
+  
+  .footer-content {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+  }
+  
