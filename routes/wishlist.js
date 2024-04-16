@@ -17,8 +17,11 @@ router.post('/addwishlist', async (req, res) => {
         // Get the email of the logged-in user
         const userEmail = req.session.user.email;
 
+        // Ensure itemBought is an array
+        const itemBoughtArray = Array.isArray(itemBought) ? itemBought : [itemBought];
+        
         // Convert itemBought values from string to boolean
-        const itemBoughtBool = itemBought.map(value => value === 'true');
+        const itemBoughtBool = itemBoughtArray.map(value => value === 'true');
 
         // Create a new wishlist item document
         const newItem = new WishlistItems({
@@ -42,5 +45,6 @@ router.post('/addwishlist', async (req, res) => {
         res.status(500).send("Error adding wishlist item");
     }
 });
+
 
 module.exports = router;
